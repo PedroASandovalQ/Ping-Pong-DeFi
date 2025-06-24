@@ -18,7 +18,7 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React.js
 - **Smart Contracts:** Solidity, Hardhat
@@ -28,7 +28,7 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repo:
 
