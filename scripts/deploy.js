@@ -1,7 +1,6 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  // Replace these with the real addresses for Sepolia
     const DAI_ADDRESS = "0xF14f9596430931E177469715c591513308244e8F";     // fDAI
     const CDAI_ADDRESS = "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643";   // cDAI
 

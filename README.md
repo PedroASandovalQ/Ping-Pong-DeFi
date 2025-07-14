@@ -33,5 +33,47 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/pingpong-defi.git
-   cd pingpong-defi
+   git clone https://github.com/PedroASandovalQ/Ping-Pong-DeFi.git
+   cd Ping-Pong-DeFi
+
+## Configure Backend (Hardhat + Solidity)
+
+1. Create .env from .env.example file:
+
+   ```bash
+   cp .env.example .env
+
+2. Edit your .env to add your PRIVATE_KEY and ALCHEMY_API.
+
+3. Install Node dependencies:
+   ```bash
+   npm install
+
+4. Compile contracts:
+   ```bash
+   npx hardhat compile
+
+## Configure Frontend (React + React-Bootstrap)
+
+1. Go to the frontend directory:
+   ```bash
+   cd ping-pong-frontend
+
+2. Install Node dependencies:
+   ```bash
+   npm install
+
+3. Create .env from .env.example file:
+
+   ```bash
+   cp .env.example .env
+
+4. Edit your .env to add your VITE_CONTRACT_ADDRESS.
+
+5. Run dev server:
+   ```bash
+   npm run dev
+
+6. Open http://localhost:5173 in your browser.
+
+
