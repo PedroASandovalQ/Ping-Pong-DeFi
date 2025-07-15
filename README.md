@@ -22,7 +22,7 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
 
 - **Frontend:** React.js
 - **Smart Contracts:** Solidity, Hardhat
-- **Blockchain:** Ethereum (Goerli testnet)
+- **Blockchain:** Ethereum (Sepolia testnet)
 - **DeFi Protocol:** Compound Finance (cTokens)
 - **SDK:** Compound.js (in progress)
 
@@ -43,7 +43,7 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
    ```bash
    cp .env.example .env
 
-2. Edit your .env to add your PRIVATE_KEY and ALCHEMY_API.
+2. Edit your .env to add your PRIVATE_KEY (wallet private key) and ALCHEMY_API.
 
 3. Install Node dependencies:
    ```bash
@@ -57,28 +57,23 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
    ```bash
    npx hardhat run scripts/deploy.js --network sepolia
 
-## Configure Frontend (React + React-Bootstrap)
-
-1. Go to the frontend directory:
+6. Add the contract address to .env in frontend directory:
    ```bash
    cd ping-pong-frontend
+   cp .env.example .env
 
-2. Install Node dependencies:
+7. Edit VITE_CONTRACT_ADDRESS with the address obtained in the previous step.
+
+
+8. Install Node dependencies in frontend directory:
    ```bash
    npm install
 
-3. Create .env from .env.example file:
-
-   ```bash
-   cp .env.example .env
-
-4. Edit your .env to add your VITE_CONTRACT_ADDRESS.
-
-5. Run dev server:
+9. Run dev server:
    ```bash
    npm run dev
 
-6. Open http://localhost:5173 in your browser.
+10. Open http://localhost:5173 in your browser.
 
 ## Usage
 
