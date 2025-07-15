@@ -1,86 +1,154 @@
-# PingPong DeFi
+#  Ping-Pong DeFi
 
-A decentralized ping pong ranking platform using the ELO system and Compound Finance.
-
----
-
-##  What is PingPong DeFi?
-
-PingPong DeFi is a web3 platform where ping pong players can:
-
-- Register their matches on-chain.
-- Earn ELO points based on match results.
-- Join tournaments by paying entry fees in crypto.
-- Have entry fees deposited in Compound to earn interest.
-- Automatically distribute the interest earned to the winners.
-
-It combines competitive gameplay with decentralized finance, rewarding skill and participation.
+**Ping-Pong DeFi** is a decentralized platform for managing ping pong rankings using smart contracts and the ELO rating system. It also integrates decentralized finance (DeFi) through the Compound protocol, allowing DAI entry fees to earn interest via cDAI, which is automatically distributed to winners.
 
 ---
 
-## Tech Stack
+##  Table of Contents
 
-- **Frontend:** React.js
-- **Smart Contracts:** Solidity, Hardhat
-- **Blockchain:** Ethereum (Sepolia testnet)
-- **DeFi Protocol:** Compound Finance (cTokens)
-- **SDK:** Compound.js (in progress)
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Project Structure](#-project-structure)
+- [Requirements](#-requirements)
+- [Environment Variables](#-environment-variables)
+- [Installation and Deployment](#-installation-and-deployment)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## Getting Started
+##  Features
 
-1. Clone the repo:
+- On-chain player registration.
+- ELO-based ranking system.
+- Match result recording directly on the blockchain.
+- DAI deposits converted into cDAI using Compound.
+- On-chain balances and withdrawal system.
+- React interface to interact with the smart contract.
 
-   ```bash
-   git clone https://github.com/PedroASandovalQ/Ping-Pong-DeFi.git
-   cd Ping-Pong-DeFi
+---
 
-## Configure Backend (Hardhat + Solidity)
+## ⚙ Technologies Used
 
-1. Create .env from .env.example file:
+- **Solidity**: smart contracts
+- **Hardhat**: Ethereum development framework
+- **Ethers.js**: interaction with smart contracts
+- **Compound Finance**: DeFi interest system
+- **React + Vite**: modern frontend framework
+- **dotenv**: environment variable management
+- **Sepolia Testnet**: Ethereum test network
 
-   ```bash
-   cp .env.example .env
+---
 
-2. Edit your .env to add your PRIVATE_KEY (wallet private key) and ALCHEMY_API.
+##  Project Structure
 
-3. Install Node dependencies:
-   ```bash
-   npm install
+```
+Ping-Pong-DeFi/
+│
+├── contracts/
+│   └── PingPong.sol            # Main smart contract
+├── scripts/
+│   └── deploy.js               # Deployment script using Hardhat
+├── ping-pong-frontend/         # React-based user interface
+├── hardhat.config.js           # Solidity and network configuration
+├── .env.example                # Required environment variables
+├── package.json                # Backend dependencies and scripts
+└── README.md                   # This file
+```
 
-4. Compile contracts:
-   ```bash
-   npx hardhat compile
+---
 
-5. Deploy in Sepolia:
-   ```bash
-   npx hardhat run scripts/deploy.js --network sepolia
+##  Requirements
 
-6. Add the contract address to .env in frontend directory:
-   ```bash
-   cd ping-pong-frontend
-   cp .env.example .env
+- Node.js ≥ 16
+- [Alchemy](https://alchemy.com/) account with Sepolia API Key
+- Metamask wallet with Sepolia ETH
+- Git
 
-7. Edit VITE_CONTRACT_ADDRESS with the address obtained in the previous step.
+---
+
+##  Environment Variables
+
+Create a `.env` file in the root folder with the following content:
+
+```env
+PRIVATE_KEY=your_private_key_without_0x
+ALCHEMY_API=https://eth-sepolia.g.alchemy.com/v2/your_api_key
+```
+
+You can use `.env.example` as a reference.
+
+---
+
+##  Installation and Deployment
+
+### Backend
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/PedroASandovalQ/Ping-Pong-DeFi.git
+cd Ping-Pong-DeFi
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Compile the contract:
+
+```bash
+npx hardhat compile
+```
+
+4. Deploy to Sepolia:
+
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+Copy the contract address displayed in the console for use in the frontend.
+
+---
+
+### Frontend
+
+1. Enter the frontend directory:
+
+```bash
+cd ping-pong-frontend
+```
+
+2. Install frontend dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file:
+
+```env
+VITE_CONTRACT_ADDRESS=0x...       # Deployed contract address
+VITE_ALCHEMY_API=https://eth-sepolia.g.alchemy.com/v2/your_api_key
+```
+
+4. Run the app locally:
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+##  Contributing
+
+Contributions are welcome! Feel free to open an **issue**, suggest improvements, or submit a **pull request** with new features.
 
 
-8. Install Node dependencies in frontend directory:
-   ```bash
-   npm install
 
-9. Run dev server:
-   ```bash
-   npm run dev
-
-10. Open http://localhost:5173 in your browser.
-
-## Usage
-
-1. Connect your wallet.
-
-2. Register player to get initial ranking.
-
-3. Report matches using wallet address of opponent.
-
-4. Deposit/Withraw DAI.
