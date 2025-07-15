@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const DAI_ADDRESS = "0xF14f9596430931E177469715c591513308244e8F";     // fDAI
+    const DAI_ADDRESS = "0x3e622317f8C93f7328350cF0B56d9eD4C620C5d6";     // fDAI
     const CDAI_ADDRESS = "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643";   // cDAI
 
 

@@ -53,6 +53,10 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
    ```bash
    npx hardhat compile
 
+5. Deploy in Sepolia:
+   ```bash
+   npx hardhat run scripts/deploy.js --network sepolia
+
 ## Configure Frontend (React + React-Bootstrap)
 
 1. Go to the frontend directory:
@@ -76,4 +80,12 @@ It combines competitive gameplay with decentralized finance, rewarding skill and
 
 6. Open http://localhost:5173 in your browser.
 
+## Usage
 
+1. Connect your wallet.
+
+2. Register player to get initial ranking.
+
+3. Report matches using wallet address of opponent.
+
+4. Deposit/Withraw DAI.
